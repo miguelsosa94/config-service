@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    config:
+     uri: http://localhost:8888
+server:
+  port: 7000
+zuul:
+  routes:
+    serv-vuelos:
+     path: /svuelos/**
+     serviceId: servicio-vuelos
+    serv-hoteles:
+     path: /shoteles/**
+     serviceId: servicio-hoteles
+    serv-reservas:
+     path: /sreservas/**
+     serviceId: servicio-reservas		
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
